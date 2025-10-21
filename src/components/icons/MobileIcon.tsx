@@ -1,0 +1,13 @@
+import React from 'react'
+
+const MobileIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M24 12H40C42.2 12 44 13.8 44 16V48C44 50.2 42.2 52 40 52H24C21.8 52 20 50.2 20 48V16C20 13.8 21.8 12 24 12Z" stroke="#C8C8CD" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M32 44C33.1046 44 34 43.1046 34 42C34 40.8954 33.1046 40 32 40C30.8954 40 30 40.8954 30 42C30 43.1046 30.8954 44 32 44Z" fill="#C8C8CD"/>
+      <line x1="26" y1="16" x2="38" y2="16" stroke="#C8C8CD" strokeWidth="3"/>
+    </svg>
+  )
+}
+
+export default MobileIcon 

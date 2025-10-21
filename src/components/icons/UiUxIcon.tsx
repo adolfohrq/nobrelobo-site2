@@ -1,0 +1,16 @@
+import React from 'react'
+
+const UiUxIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M16 12H48C50.2 12 52 13.8 52 16V48C52 50.2 50.2 52 48 52H16C13.8 52 12 50.2 12 48V16C12 13.8 13.8 12 16 12Z" stroke="#C8C8CD" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 24H52" stroke="#C8C8CD" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="20" cy="18" r="2" fill="#C8C8CD"/>
+      <circle cx="28" cy="18" r="2" fill="#C8C8CD"/>
+      <path d="M24 36H40" stroke="#C8C8CD" strokeWidth="3" strokeLinecap="round"/>
+      <path d="M24 42H36" stroke="#C8C8CD" strokeWidth="3" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+export default UiUxIcon 
