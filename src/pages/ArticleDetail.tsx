@@ -61,13 +61,13 @@ const ArticleDetailPage: React.FC = () => {
         subtitle={article.excerpt}
         badge={article.category}
         backgroundImage="/lobo-hero-knowledge.jpg"
-        height="h-[60vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",
           brightness: "80",
           contrast: "120",
-          scale: 1.0
+          scale: 1.05
         }}
       />
       
@@ -81,7 +81,7 @@ const ArticleDetailPage: React.FC = () => {
           <div className="mb-8">
             <nav className="flex items-center text-sm text-white/60">
               <Link to="/" className="hover:text-primary transition-colors">
-                Home
+                Início
               </Link>
               <span className="mx-2">/</span>
               <Link to="/knowledge-base" className="hover:text-primary transition-colors">

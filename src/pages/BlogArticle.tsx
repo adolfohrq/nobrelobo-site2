@@ -675,7 +675,7 @@ const BlogArticle: React.FC = () => {
         subtitle={brandingArticle.excerpt}
         badge={brandingArticle.category}
         backgroundImage={brandingArticle.image}
-        height="h-[50vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",

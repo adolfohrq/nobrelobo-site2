@@ -155,13 +155,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           }
         />
         
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
           {/* Formulário de contato */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="bg-accent/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8 lg:p-10 shadow-xl relative overflow-hidden"
+            className="bg-accent/20 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 lg:p-10 shadow-xl relative overflow-hidden"
           >
             {/* Elementos decorativos de fundo */}
             <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
@@ -190,9 +190,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="relative">
-                <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   <div className="group">
-                    <label htmlFor="name" className="text-white/80 text-sm font-medium mb-2 block group-focus-within:text-primary transition-colors">
+                    <label htmlFor="name" className="text-white/80 text-sm sm:text-base font-medium mb-2 block group-focus-within:text-primary transition-colors">
                       Seu nome completo
                     </label>
                     <div className="relative">
@@ -242,9 +242,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                 </div>
                 
-                <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   <div className="group">
-                    <label htmlFor="phone" className="text-white/80 text-sm font-medium mb-2 block group-focus-within:text-primary transition-colors">
+                    <label htmlFor="phone" className="text-white/80 text-sm sm:text-base font-medium mb-2 block group-focus-within:text-primary transition-colors">
                       Telefone
                     </label>
                     <div className="relative">
@@ -325,8 +325,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                       name="message" 
                       value={formData.message}
                       onChange={handleChange}
-                      rows={5}
-                      className="w-full bg-white/5 border border-white/10 text-white rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none"
+                      rows={4}
+                      className="w-full bg-white/5 border border-white/10 text-white rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none min-h-[100px] sm:min-h-[120px]"
                       placeholder="Descreva brevemente seu projeto, objetivos e expectativas..."
                       required
                     ></motion.textarea>
@@ -336,7 +336,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 <motion.button 
                   type="submit"
                   disabled={formStatus === 'submitting'}
-                  className="w-full bg-primary text-primary-foreground font-gilroy font-bold py-4 px-8 rounded-xl relative overflow-hidden group disabled:opacity-70"
+                  className="w-full bg-primary text-primary-foreground font-gilroy font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl relative overflow-hidden group disabled:opacity-70"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -384,7 +384,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="rounded-2xl border border-white/10 p-8 lg:p-10 h-full flex flex-col justify-between bg-accent/10 backdrop-blur-sm shadow-xl relative overflow-hidden"
+            className="rounded-2xl border border-white/10 p-5 sm:p-6 md:p-8 lg:p-10 h-full flex flex-col justify-between bg-accent/10 backdrop-blur-sm shadow-xl relative overflow-hidden"
           >
             {/* Elementos decorativos de fundo */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
@@ -410,7 +410,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                       transition={{ duration: 0.4, delay: item.delay }}
                       className="flex items-start group hover:scale-105 transition-transform duration-300"
                     >
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                         {item.icon}
                       </div>
                       <div className="flex flex-col justify-center">

@@ -169,7 +169,7 @@ const About3: React.FC = () => {
         subtitle="Conheça a história, valores e a equipe por trás da Nobre Lobo, uma agência digital comprometida com a excelência e resultados extraordinários."
         badge="Sobre Nós"
         backgroundImage="/lobo-hero-about.jpg"
-        height="h-[50vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",

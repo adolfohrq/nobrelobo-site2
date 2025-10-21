@@ -179,7 +179,9 @@ const PortfolioSection: React.FC = () => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
       
-      if (window.innerWidth < 640) {
+      if (window.innerWidth < 480) {
+        setItemsPerView(1);
+      } else if (window.innerWidth < 768) {
         setItemsPerView(1);
       } else if (window.innerWidth < 1024) {
         setItemsPerView(2);
@@ -307,13 +309,13 @@ const PortfolioSection: React.FC = () => {
   };
   
   return (
-    <section ref={sectionRef} className="py-32 relative overflow-hidden">
+    <section ref={sectionRef} className="py-16 md:py-20 relative overflow-hidden">
       {/* Injetar os keyframes de animação */}
       <style dangerouslySetInnerHTML={{ __html: shimmerKeyframes }} />
       
       <div className="relative z-10">
         {/* Cabeçalho da seção usando SectionHeader */}
-        <div className="container mx-auto px-4 mb-16">
+        <div className="container mx-auto px-4 mb-10">
           <SectionHeader 
             title={<>Projetos que <span className="text-primary">transformam</span></>}
             subtitle="Soluções criativas que destacam nossos clientes no mercado, com foco em resultados reais e inovação."
@@ -334,12 +336,12 @@ const PortfolioSection: React.FC = () => {
         </div>
         
         {/* Filtro de categorias - Redesenhado para ser mais sutil */}
-        <div className="container mx-auto px-4 mb-16">
+        <div className="container mx-auto px-4 mb-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3"
         >
           {categories.map((category) => (
             <button
@@ -348,7 +350,7 @@ const PortfolioSection: React.FC = () => {
                   setActiveCategory(category.id);
                   setCurrentSlide(0); // Reset slide ao mudar categoria
                 }}
-                className={`group relative px-4 py-2 text-sm font-medium transition-all duration-300 overflow-hidden ${
+                className={`group relative px-4 py-2 sm:px-3 sm:py-1.5 text-xs font-medium transition-all duration-300 overflow-hidden ${
                 activeCategory === category.id
                     ? 'text-primary'
                     : 'text-white/60 hover:text-white/90'
@@ -416,19 +418,23 @@ const PortfolioSection: React.FC = () => {
               {filteredItems.map((item, index) => (
                 <motion.div
                   key={`${item.id}-${index}`}
-                  className="flex-shrink-0 relative z-10 pr-4 md:pr-6"
+                  className="flex-shrink-0 relative z-10 pr-3 md:pr-4"
                   style={{ 
-                    width: itemsPerView === 1 ? 'min(85vw, 320px)' : `calc(90vw / ${itemsPerView} - 22px)`,
-                    maxWidth: "450px",
-                    minWidth: itemsPerView === 1 ? "260px" : "252px",
+                    width: itemsPerView === 1 
+                      ? 'min(85vw, 320px)' 
+                      : itemsPerView === 2 
+                        ? 'calc((100vw - 64px) / 2 - 12px)' 
+                        : 'calc((100vw - 96px) / 3 - 12px)',
+                    maxWidth: itemsPerView === 1 ? "340px" : "360px",
+                    minWidth: itemsPerView === 1 ? "280px" : "220px",
                     willChange: "transform",
                     transform: "translate3d(0, 0, 0)"
                   }}
                 >
-                  <div className="group relative rounded-xl overflow-visible aspect-[3/4] bg-white/5 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:scale-[1.02]">
+                  <div className="group relative rounded-lg overflow-visible aspect-[4/5] bg-white/5 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:scale-[1.02]">
                     {/* Efeito de brilho amarelo nos cantos */}
                     <motion.div 
-                      className="absolute -inset-[1px] rounded-xl z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                      className="absolute -inset-[1px] rounded-lg z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                       style={{
@@ -440,14 +446,14 @@ const PortfolioSection: React.FC = () => {
                     
                     {/* Brilhos nos cantos */}
                     <motion.div 
-                      className="absolute -top-1 -right-1 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 z-0"
+                      className="absolute -top-1 -right-1 w-12 h-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 z-0"
                       style={{
                         background: "radial-gradient(circle, rgba(236,200,11,0.15) 0%, transparent 70%)",
                       }}
                     />
                     
                     <motion.div 
-                      className="absolute -bottom-2 -left-2 w-24 h-24 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 z-0"
+                      className="absolute -bottom-1 -left-1 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 z-0"
                       style={{
                         background: "radial-gradient(circle, rgba(236,200,11,0.1) 0%, transparent 70%)",
                       }}
@@ -455,13 +461,13 @@ const PortfolioSection: React.FC = () => {
                     
                     {/* Card com conteúdo */}
                     <motion.div 
-                      className="w-full h-full relative z-10 bg-black/30 rounded-xl"
+                      className="w-full h-full relative z-10 bg-black/30 rounded-lg"
                       whileHover={{
                         boxShadow: "0 0 25px 2px rgba(236,200,11,0.1)",
                         transition: { duration: 0.5 }
                       }}
                     >
-                      <div className="absolute inset-0 overflow-hidden rounded-xl">
+                      <div className="absolute inset-0 overflow-hidden rounded-lg">
                         <motion.img 
                   src={item.image} 
                   alt={item.title} 
@@ -475,15 +481,15 @@ const PortfolioSection: React.FC = () => {
               </div>
               
                       {/* Gradiente overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 from-10% via-black/75 via-30% to-black/10 to-90% opacity-90 rounded-xl group-hover:from-black/95 group-hover:via-black/85 group-hover:via-60% group-hover:to-black/40 transition-all duration-700 ease-in-out" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 from-10% via-black/75 via-30% to-black/10 to-90% opacity-90 rounded-lg group-hover:from-black/95 group-hover:via-black/85 group-hover:via-60% group-hover:to-black/40 transition-all duration-700 ease-in-out" />
                   
                       {/* Borda melhorada */}
                       <motion.div 
-                        className="absolute inset-0 rounded-xl overflow-hidden z-10"
+                        className="absolute inset-0 rounded-lg overflow-hidden z-10"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                       >
-                        <div className="absolute inset-px rounded-xl border-2 border-transparent bg-clip-padding" 
+                        <div className="absolute inset-px rounded-lg border-2 border-transparent bg-clip-padding" 
                           style={{
                             background: "linear-gradient(135deg, rgba(236,200,11,0.2), transparent 50%, rgba(236,200,11,0.1))",
                           }}
@@ -492,53 +498,53 @@ const PortfolioSection: React.FC = () => {
                       
                       {/* Borda padrão */}
                       <motion.div 
-                        className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-primary/20 transition-colors duration-500 z-10"
+                        className="absolute inset-0 rounded-lg border border-white/10 group-hover:border-primary/20 transition-colors duration-500 z-10"
                       />
                       
                       {/* Conteúdo */}
-                      <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-20 overflow-visible">
+                      <div className="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end z-20 overflow-visible">
                         <motion.div 
                           initial={{ y: 5 }}
                           whileHover={{ y: 0, transition: { duration: 0.3 } }}
                           className="transform transition-transform duration-300 ease-out"
                         >
                           {/* Tag de categoria */}
-                          <div className="flex items-center mb-3 transform transition-transform duration-300 ease-out">
-                            <span className="text-primary font-medium uppercase tracking-wider text-xs px-2 py-1 bg-primary/10 rounded-sm">
+                          <div className="flex items-center mb-2 transform transition-transform duration-300 ease-out">
+                            <span className="text-primary font-medium uppercase tracking-wider text-[10px] px-2 py-0.5 bg-primary/10 rounded-sm">
                       {item.category.replace('-', ' ')}
                     </span>
                           </div>
                           
                           {/* Título do projeto */}
-                          <h3 className="text-white text-xl font-gilroy font-bold mb-2 group-hover:text-primary transition-all duration-300 drop-shadow-sm">
+                          <h3 className="text-white text-base sm:text-lg font-gilroy font-bold mb-1.5 group-hover:text-primary transition-all duration-300 drop-shadow-sm">
                             {item.title}
                           </h3>
                           
                           {/* Cliente */}
-                          <p className="text-white/80 text-sm mb-3 transition-all duration-300 group-hover:text-white/95">{item.client}</p>
+                          <p className="text-white/80 text-xs mb-2 transition-all duration-300 group-hover:text-white/95">{item.client}</p>
                           
                           {/* Linha decorativa amarela */}
                           <motion.div 
-                            className="h-px bg-primary/30 w-0 group-hover:w-1/2 transition-all duration-500 mb-3"
+                            className="h-px bg-primary/30 w-0 group-hover:w-1/2 transition-all duration-500 mb-2"
                           />
                           
                           {/* Descrição com animação de entrada */}
                           <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 ease-out overflow-visible transform translate-y-2 group-hover:translate-y-0">
-                            <p className="text-white/90 text-sm mb-4 leading-relaxed">
+                            <p className="text-white/90 text-xs mb-3 leading-relaxed">
                               {item.description}
                             </p>
                           </div>
                           
                           {/* Link para detalhes */}
-                          <div className="inline-flex items-center overflow-visible mb-1">
+                          <div className="inline-flex items-center overflow-visible">
                             <motion.div 
                               initial={{ opacity: 0, y: 5 }}
                               whileHover={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.3 }}
-                              className="bg-primary text-black text-sm font-medium rounded-full px-4 py-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500 ease-out"
+                              className="bg-primary text-black text-xs font-medium rounded-full px-3 py-1.5 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500 ease-out"
                             >
                               Ver projeto
-                              <span className="ml-2 inline-block">→</span>
+                              <span className="ml-1.5 inline-block text-xs">→</span>
                             </motion.div>
                           </div>
                         </motion.div>
@@ -552,19 +558,23 @@ const PortfolioSection: React.FC = () => {
               {filteredItems.map((item, index) => (
                 <motion.div
                   key={`duplicate-${item.id}-${index}`}
-                  className="flex-shrink-0 relative z-10 pr-4 md:pr-6"
+                  className="flex-shrink-0 relative z-10 pr-3 md:pr-4"
                   style={{ 
-                    width: itemsPerView === 1 ? 'min(85vw, 320px)' : `calc(90vw / ${itemsPerView} - 22px)`,
-                    maxWidth: "450px",
-                    minWidth: itemsPerView === 1 ? "260px" : "252px",
+                    width: itemsPerView === 1 
+                      ? 'min(85vw, 320px)' 
+                      : itemsPerView === 2 
+                        ? 'calc((100vw - 64px) / 2 - 12px)' 
+                        : 'calc((100vw - 96px) / 3 - 12px)',
+                    maxWidth: itemsPerView === 1 ? "340px" : "360px",
+                    minWidth: itemsPerView === 1 ? "280px" : "220px",
                     willChange: "transform",
                     transform: "translate3d(0, 0, 0)"
                   }}
                 >
-                  <div className="group relative rounded-xl overflow-visible aspect-[3/4] bg-white/5 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:scale-[1.02]">
+                  <div className="group relative rounded-lg overflow-visible aspect-[4/5] bg-white/5 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:scale-[1.02]">
                     {/* Efeito de brilho amarelo nos cantos */}
                     <motion.div 
-                      className="absolute -inset-[1px] rounded-xl z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                      className="absolute -inset-[1px] rounded-lg z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                       style={{
@@ -576,14 +586,14 @@ const PortfolioSection: React.FC = () => {
                     
                     {/* Brilhos nos cantos */}
                     <motion.div 
-                      className="absolute -top-1 -right-1 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 z-0"
+                      className="absolute -top-1 -right-1 w-12 h-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 z-0"
                       style={{
                         background: "radial-gradient(circle, rgba(236,200,11,0.15) 0%, transparent 70%)",
                       }}
                     />
                     
                     <motion.div 
-                      className="absolute -bottom-2 -left-2 w-24 h-24 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 z-0"
+                      className="absolute -bottom-1 -left-1 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 z-0"
                       style={{
                         background: "radial-gradient(circle, rgba(236,200,11,0.1) 0%, transparent 70%)",
                       }}
@@ -591,13 +601,13 @@ const PortfolioSection: React.FC = () => {
                     
                     {/* Card com conteúdo */}
                     <motion.div 
-                      className="w-full h-full relative z-10 bg-black/30 rounded-xl"
+                      className="w-full h-full relative z-10 bg-black/30 rounded-lg"
                       whileHover={{
                         boxShadow: "0 0 25px 2px rgba(236,200,11,0.1)",
                         transition: { duration: 0.5 }
                       }}
                     >
-                      <div className="absolute inset-0 overflow-hidden rounded-xl">
+                      <div className="absolute inset-0 overflow-hidden rounded-lg">
                         <motion.img 
                           src={item.image} 
                           alt={item.title} 
@@ -611,15 +621,15 @@ const PortfolioSection: React.FC = () => {
                       </div>
                       
                       {/* Gradiente overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 from-10% via-black/75 via-30% to-black/10 to-90% opacity-90 rounded-xl group-hover:from-black/95 group-hover:via-black/85 group-hover:via-60% group-hover:to-black/40 transition-all duration-700 ease-in-out" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 from-10% via-black/75 via-30% to-black/10 to-90% opacity-90 rounded-lg group-hover:from-black/95 group-hover:via-black/85 group-hover:via-60% group-hover:to-black/40 transition-all duration-700 ease-in-out" />
                   
                       {/* Borda melhorada */}
                       <motion.div 
-                        className="absolute inset-0 rounded-xl overflow-hidden z-10"
+                        className="absolute inset-0 rounded-lg overflow-hidden z-10"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                       >
-                        <div className="absolute inset-px rounded-xl border-2 border-transparent bg-clip-padding" 
+                        <div className="absolute inset-px rounded-lg border-2 border-transparent bg-clip-padding" 
                           style={{
                             background: "linear-gradient(135deg, rgba(236,200,11,0.2), transparent 50%, rgba(236,200,11,0.1))",
                           }}
@@ -628,53 +638,53 @@ const PortfolioSection: React.FC = () => {
                       
                       {/* Borda padrão */}
                       <motion.div 
-                        className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-primary/20 transition-colors duration-500 z-10"
+                        className="absolute inset-0 rounded-lg border border-white/10 group-hover:border-primary/20 transition-colors duration-500 z-10"
                       />
                       
                       {/* Conteúdo */}
-                      <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-20 overflow-visible">
+                      <div className="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end z-20 overflow-visible">
                         <motion.div 
                           initial={{ y: 5 }}
                           whileHover={{ y: 0, transition: { duration: 0.3 } }}
                           className="transform transition-transform duration-300 ease-out"
                         >
                           {/* Tag de categoria */}
-                          <div className="flex items-center mb-3 transform transition-transform duration-300 ease-out">
-                            <span className="text-primary font-medium uppercase tracking-wider text-xs px-2 py-1 bg-primary/10 rounded-sm">
+                          <div className="flex items-center mb-2 transform transition-transform duration-300 ease-out">
+                            <span className="text-primary font-medium uppercase tracking-wider text-[10px] px-2 py-0.5 bg-primary/10 rounded-sm">
                               {item.category.replace('-', ' ')}
                             </span>
                           </div>
                           
                           {/* Título do projeto */}
-                          <h3 className="text-white text-xl font-gilroy font-bold mb-2 group-hover:text-primary transition-all duration-300 drop-shadow-sm">
+                          <h3 className="text-white text-base sm:text-lg font-gilroy font-bold mb-1.5 group-hover:text-primary transition-all duration-300 drop-shadow-sm">
                             {item.title}
                           </h3>
                           
                           {/* Cliente */}
-                          <p className="text-white/80 text-sm mb-3 transition-all duration-300 group-hover:text-white/95">{item.client}</p>
+                          <p className="text-white/80 text-xs mb-2 transition-all duration-300 group-hover:text-white/95">{item.client}</p>
                           
                           {/* Linha decorativa amarela */}
                           <motion.div 
-                            className="h-px bg-primary/30 w-0 group-hover:w-1/2 transition-all duration-500 mb-3"
+                            className="h-px bg-primary/30 w-0 group-hover:w-1/2 transition-all duration-500 mb-2"
                           />
                           
                           {/* Descrição com animação de entrada */}
                           <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 ease-out overflow-visible transform translate-y-2 group-hover:translate-y-0">
-                            <p className="text-white/90 text-sm mb-4 leading-relaxed">
+                            <p className="text-white/90 text-xs mb-3 leading-relaxed">
                     {item.description}
                   </p>
                           </div>
                   
                           {/* Link para detalhes */}
-                          <div className="inline-flex items-center overflow-visible mb-1">
+                          <div className="inline-flex items-center overflow-visible">
                   <motion.div 
                               initial={{ opacity: 0, y: 5 }}
                               whileHover={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.3 }}
-                              className="bg-primary text-black text-sm font-medium rounded-full px-4 py-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500 ease-out"
+                              className="bg-primary text-black text-xs font-medium rounded-full px-3 py-1.5 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500 ease-out"
                             >
                               Ver projeto
-                              <span className="ml-2 inline-block">→</span>
+                              <span className="ml-1.5 inline-block text-xs">→</span>
                             </motion.div>
                           </div>
                         </motion.div>
@@ -685,9 +695,9 @@ const PortfolioSection: React.FC = () => {
               ))}
             </motion.div>
             
-            {/* Botões grandes laterais para navegação */}
+            {/* Botões grandes laterais para navegação - Ocultos em mobile */}
             {filteredItems.length > itemsPerView && (
-              <>
+              <div className="hidden md:block">
                 <button
                   onClick={prevSlide}
                   className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-24 bg-gradient-to-r from-black/50 to-transparent flex items-center justify-start pl-2 opacity-0 hover:opacity-100 transition-opacity duration-300"
@@ -717,17 +727,17 @@ const PortfolioSection: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
-              </>
+              </div>
             )}
           </motion.div>
 
           {/* Botões de navegação do carrossel */}
           {filteredItems.length > itemsPerView && (
             <div className="container mx-auto px-4">
-              <div className="flex justify-between mt-10">
+              <div className="flex justify-between mt-6">
                 <motion.button
                   onClick={prevSlide}
-                  className="group w-12 h-12 rounded-full flex items-center justify-center border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-primary/20 hover:border-primary/30 transition-all duration-300"
+                  className="group w-14 h-14 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-primary/20 hover:border-primary/30 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, x: -20 }}
@@ -747,7 +757,7 @@ const PortfolioSection: React.FC = () => {
                 {/* Controle de autoplay */}
                 <motion.button
                   onClick={() => setIsPaused(!isPaused)}
-                  className={`group w-12 h-12 rounded-full flex items-center justify-center border border-white/10 ${isPaused ? 'bg-primary/20 border-primary/30' : 'bg-white/5'} backdrop-blur-sm hover:bg-primary/20 hover:border-primary/30 transition-all duration-300`}
+                  className={`group w-14 h-14 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border border-white/10 ${isPaused ? 'bg-primary/20 border-primary/30' : 'bg-white/5'} backdrop-blur-sm hover:bg-primary/20 hover:border-primary/30 transition-all duration-300`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -778,7 +788,7 @@ const PortfolioSection: React.FC = () => {
                 
                 <motion.button
                   onClick={nextSlide}
-                  className="group w-12 h-12 rounded-full flex items-center justify-center border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-primary/20 hover:border-primary/30 transition-all duration-300"
+                  className="group w-14 h-14 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-primary/20 hover:border-primary/30 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, x: 20 }}
@@ -802,13 +812,13 @@ const PortfolioSection: React.FC = () => {
         {/* Indicadores do slide (bolhas) */}
         {filteredItems.length > itemsPerView && (
           <div className="container mx-auto px-4">
-            <div className="flex justify-center mt-6 space-x-2">
+            <div className="flex justify-center mt-4 space-x-2">
               {Array.from({ length: filteredItems.length }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    currentSlide % filteredItems.length === index ? 'bg-primary w-6' : 'bg-white/30 hover:bg-white/50'
+                  className={`w-3 h-3 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
+                    currentSlide % filteredItems.length === index ? 'bg-primary w-8 sm:w-6' : 'bg-white/30 hover:bg-white/50'
                   }`}
                   aria-label={`Ir para o slide ${index + 1}`}
                 />
@@ -823,7 +833,7 @@ const PortfolioSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="mt-20 text-center"
+            className="mt-12 text-center"
           >
             <Link to="/portfolio" className="group inline-flex items-center">
               <span className="relative text-white text-lg font-medium overflow-hidden">

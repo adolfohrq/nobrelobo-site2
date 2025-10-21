@@ -203,7 +203,7 @@ const ServicesSection: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-28"
+      className="relative py-16 md:py-20"
       id="servicos"
     >
       {/* Removidos elementos decorativos e background */}
@@ -226,13 +226,13 @@ const ServicesSection: React.FC = () => {
         />
         
         {/* Filtro de categorias */}
-        <div className="flex justify-center mt-12 mb-14">
-          <div className="p-1 bg-white/5 rounded-full border border-white/10 flex">
+        <div className="flex justify-center mt-6 sm:mt-8 mb-8 sm:mb-10 px-4">
+          <div className="p-1 bg-white/5 rounded-full border border-white/10 flex flex-wrap gap-1 justify-center max-w-full">
             {categories.map((category) => (
               <motion.button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`py-2 px-6 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`py-1.5 px-4 sm:py-2 sm:px-6 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                   activeCategory === category.id 
                     ? "bg-primary text-primary-foreground" 
                     : "text-white/70 hover:text-white"
@@ -254,7 +254,7 @@ const ServicesSection: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
           >
             {filteredServices.map((service, index) => (
               <motion.div
@@ -268,10 +268,10 @@ const ServicesSection: React.FC = () => {
                   to={`/services/${service.slug}`}
                   className="block h-full"
                 >
-                  <div className="relative bg-white/5 rounded-2xl border border-white/10 p-6 h-full 
+                  <div className="relative bg-white/5 rounded-xl border border-white/10 p-4 sm:p-5 h-full 
                                 hover:border-primary/40 transition-all duration-500 flex flex-col">
                     {/* Ícone do serviço */}
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 
                                   group-hover:bg-primary/20 transition-all duration-500 z-10 relative">
                       <div className="relative z-10 transform group-hover:scale-125 transition-transform duration-500">
                         <ServiceIcon name={service.icon} />
@@ -280,12 +280,12 @@ const ServicesSection: React.FC = () => {
                     
                     {/* Conteúdo do serviço */}
                     <div className="z-10 flex-grow">
-                      <h3 className="text-xl font-unbounded font-bold text-white mb-3 
+                      <h3 className="text-lg font-unbounded font-bold text-white mb-2 
                                     group-hover:text-primary transition-colors duration-300">
                         {service.title}
                       </h3>
                       
-                      <p className="text-white/70 mb-6 text-sm">
+                      <p className="text-white/70 mb-4 text-sm">
                         {service.description}
                       </p>
                     </div>
@@ -311,14 +311,14 @@ const ServicesSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-10 text-center"
         >
           <Link to="/services">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center bg-primary text-primary-foreground font-unbounded font-bold py-4 px-10 rounded-xl 
-                      transition-all duration-300 relative"
+              className="inline-flex items-center bg-primary text-primary-foreground font-unbounded font-bold py-2.5 sm:py-3 px-6 sm:px-8 rounded-xl 
+                      transition-all duration-300 relative text-xs sm:text-sm"
             >
               <span className="relative z-10">Explorar Todos os Serviços</span>
               <svg 

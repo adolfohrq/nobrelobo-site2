@@ -60,7 +60,7 @@ const TagPage: React.FC = () => {
         subtitle={`Explore nossa coleção de artigos, tutoriais e guias relacionados a ${formattedTagName}.`}
         badge="Tag"
         backgroundImage="/lobo-hero-knowledge.jpg"
-        height="h-[40vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",

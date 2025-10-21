@@ -55,7 +55,7 @@ const KnowledgeBasePage: React.FC = () => {
         subtitle="Explore artigos, tutoriais e guias sobre nossos serviços e soluções digitais para impulsionar seu negócio."
         badge="Central de Ajuda"
         backgroundImage="/lobo-hero-knowledge.jpg"
-        height="h-[50vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",

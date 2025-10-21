@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
         title="Cada Marca tem"
         titleHighlight="uma História"
         description="A sua começa aqui. Com a Nobre Lobo, você não contrata apenas uma agência — você ganha um parceiro estratégico comprometido com seu sucesso."
-        image="/lobo-hero-about.jpg"
+        image="/a.jpg"
         imageAlt="Nossa Jornada"
         floatingBadgeText="10+ Anos de Experiência"
         steps={[

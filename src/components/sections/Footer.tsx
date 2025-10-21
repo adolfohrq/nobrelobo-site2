@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
         className="container mx-auto px-4 relative z-10"
         style={{ opacity, y }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 mb-10 sm:mb-12 lg:mb-16">
           {/* Coluna da logo e informações da empresa */}
           <div className="lg:col-span-4">
             <div className="mb-6">
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
                   <motion.img 
                     src="/logo-2.png" 
                     alt="Nobre Lobo" 
-                    className="h-16 w-auto object-contain"
+                    className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   />
@@ -133,19 +133,19 @@ const Footer: React.FC = () => {
               </motion.div>
             </div>
             
-            <p className="text-white/80 mb-6">
+            <p className="text-white/80 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
               Transformamos marcas através de estratégias criativas e soluções digitais inovadoras que geram resultados reais.
             </p>
             
             {/* Redes sociais */}
-            <div className="flex space-x-3 mb-8">
+            <div className="flex flex-wrap space-x-2 sm:space-x-3 mb-6 sm:mb-8">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary transition-colors duration-300"
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -161,7 +161,7 @@ const Footer: React.FC = () => {
           
           {/* Colunas de links */}
           <div className="lg:col-span-2">
-            <h4 className="text-lg font-gilroy font-bold text-white mb-6">Empresa</h4>
+            <h4 className="text-base sm:text-lg font-gilroy font-bold text-white mb-4 sm:mb-6">Empresa</h4>
             <ul className="space-y-3">
               {footerLinks.empresa.map((link, index) => (
                 <motion.li 
@@ -172,7 +172,7 @@ const Footer: React.FC = () => {
                 >
                   <Link 
                     to={link.url}
-                    className="text-white/80 hover:text-primary transition-colors duration-300 flex items-center"
+                    className="text-sm sm:text-base text-white/80 hover:text-primary transition-colors duration-300 flex items-center py-1"
                   >
                     <span className="w-1.5 h-1.5 bg-primary/50 rounded-full mr-2"></span>
                     {link.nome}
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="lg:col-span-2">
-            <h4 className="text-lg font-gilroy font-bold text-white mb-6">Serviços</h4>
+            <h4 className="text-base sm:text-lg font-gilroy font-bold text-white mb-4 sm:mb-6">Serviços</h4>
             <ul className="space-y-3">
               {footerLinks.servicos.map((link, index) => (
                 <motion.li 
@@ -194,7 +194,7 @@ const Footer: React.FC = () => {
                 >
                   <Link 
                     to={link.url}
-                    className="text-white/80 hover:text-primary transition-colors duration-300 flex items-center"
+                    className="text-sm sm:text-base text-white/80 hover:text-primary transition-colors duration-300 flex items-center py-1"
                   >
                     <span className="w-1.5 h-1.5 bg-primary/50 rounded-full mr-2"></span>
                     {link.nome}
@@ -205,7 +205,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="lg:col-span-2">
-            <h4 className="text-lg font-gilroy font-bold text-white mb-6">Recursos</h4>
+            <h4 className="text-base sm:text-lg font-gilroy font-bold text-white mb-4 sm:mb-6">Recursos</h4>
             <ul className="space-y-3">
               {footerLinks.recursos.map((link, index) => (
                 <motion.li 
@@ -216,7 +216,7 @@ const Footer: React.FC = () => {
                 >
                   <Link 
                     to={link.url}
-                    className="text-white/80 hover:text-primary transition-colors duration-300 flex items-center"
+                    className="text-sm sm:text-base text-white/80 hover:text-primary transition-colors duration-300 flex items-center py-1"
                   >
                     <span className="w-1.5 h-1.5 bg-primary/50 rounded-full mr-2"></span>
                     {link.nome}
@@ -228,7 +228,7 @@ const Footer: React.FC = () => {
           
           {/* Contato */}
           <div className="lg:col-span-2">
-            <h4 className="text-lg font-gilroy font-bold text-white mb-6">Contato</h4>
+            <h4 className="text-base sm:text-lg font-gilroy font-bold text-white mb-4 sm:mb-6">Contato</h4>
             <div className="space-y-4">
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
@@ -284,19 +284,19 @@ const Footer: React.FC = () => {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
         
         {/* Copyright e links legais */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/60 text-sm mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
+          <p className="text-white/60 text-xs sm:text-sm text-center md:text-left mb-4 md:mb-0">
             © {new Date().getFullYear()} Nobre Lobo. Todos os direitos reservados.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link to="/privacidade" className="text-white/60 text-sm hover:text-primary transition-colors duration-300">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
+            <Link to="/privacidade" className="text-white/60 text-xs sm:text-sm hover:text-primary transition-colors duration-300">
               Política de Privacidade
             </Link>
-            <Link to="/termos" className="text-white/60 text-sm hover:text-primary transition-colors duration-300">
+            <Link to="/termos" className="text-white/60 text-xs sm:text-sm hover:text-primary transition-colors duration-300">
               Termos de Uso
             </Link>
-            <Link to="/cookies" className="text-white/60 text-sm hover:text-primary transition-colors duration-300">
+            <Link to="/cookies" className="text-white/60 text-xs sm:text-sm hover:text-primary transition-colors duration-300">
               Política de Cookies
             </Link>
           </div>

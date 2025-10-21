@@ -121,17 +121,17 @@ const RecursosGratuitos: React.FC = () => {
     <Layout>
 
 <HeroPages 
-        title="NOSSO <br />PORTFÓLIO<span class='text-primary'>.</span>"
-        subtitle="Conheça alguns dos projetos que desenvolvemos e os resultados que alcançamos para nossos clientes."
-        badge="Casos de Sucesso"
+        title="RECURSOS <br />GRATUITOS<span class='text-primary'>.</span>"
+        subtitle="Ferramentas, guias e templates profissionais para acelerar o crescimento do seu negócio. Tudo gratuito."
+        badge="Conteúdo Exclusivo"
         backgroundImage="/lobo-hero-portfolio.jpg"
-        height="h-[50vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",
-          brightness: "100",
+          brightness: "75",
           contrast: "110",
-          scale: 1
+          scale: 1.05
         }}
       />
 

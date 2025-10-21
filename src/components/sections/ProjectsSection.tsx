@@ -62,7 +62,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   }
 
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-8 md:py-12 relative">
       {/* Fundo decorativo */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[800px] h-[800px] bg-gradient-to-b from-primary/3 to-transparent rounded-full blur-[120px] opacity-60"></div>

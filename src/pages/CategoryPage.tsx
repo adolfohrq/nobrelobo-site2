@@ -71,7 +71,7 @@ const CategoryPage: React.FC = () => {
         subtitle={`Explore nossa coleção de artigos, tutoriais e guias sobre ${formattedCategoryName}.`}
         badge="Categoria"
         backgroundImage="/lobo-hero-knowledge.jpg"
-        height="h-[40vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",

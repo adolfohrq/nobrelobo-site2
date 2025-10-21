@@ -241,7 +241,7 @@ const BlogPage: React.FC = () => {
         subtitle="Insights, estudos de caso e novidades sobre marketing digital, design e tecnologia."
         badge="Insights Digitais"
         backgroundImage="/lobo-hero-blog.jpg"
-        height="h-[50vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",

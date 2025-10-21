@@ -786,7 +786,7 @@ const DesenvolvimentoWebPage: React.FC = () => {
               {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Home",
+                "name": "Início",
                 "item": "https://nobrelobo.com"
               },
               {
@@ -830,7 +830,7 @@ const DesenvolvimentoWebPage: React.FC = () => {
       <nav className="py-4 bg-black/20" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <ol className="flex items-center space-x-2 text-sm text-white/70">
-            <li><a href="/" className="hover:text-primary transition-colors">Home</a></li>
+            <li><a href="/" className="hover:text-primary transition-colors">Início</a></li>
             <li className="text-white/40">/</li>
             <li><a href="/services" className="hover:text-primary transition-colors">Serviços</a></li>
             <li className="text-white/40">/</li>

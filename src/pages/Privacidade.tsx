@@ -13,13 +13,13 @@ const Privacidade: React.FC = () => {
         subtitle="Transparência e proteção dos seus dados pessoais são fundamentais para nós. Conheça como coletamos, usamos e protegemos suas informações."
         badge="Privacidade"
         backgroundImage="/lobo-hero-about.jpg"
-        height="h-[50vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",
-          brightness: "100",
+          brightness: "75",
           contrast: "110",
-          scale: 1
+          scale: 1.05
         }}
       />
 

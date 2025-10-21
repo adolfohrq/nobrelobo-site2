@@ -16,14 +16,18 @@ module.exports = {
         md: "2rem",
       },
       screens: {
-        sm: "640px",     // Mobile grande/pequenos tablets
-        md: "768px",     // Tablets
-        lg: "800px",     // Tablets horizontais e notebooks pequenos
-        xl: "1000px",    // Notebooks e desktops
-        "2xl": "1100px", // Telas grandes
+        sm: "640px",
+        md: "768px",
+        lg: "800px",
+        xl: "800px",
+        "2xl": "1000px",
       },
+
     },
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       fontFamily: {
         gilroy: ['Gilroy', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],

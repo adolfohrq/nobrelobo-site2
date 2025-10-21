@@ -926,7 +926,7 @@ const MarketingDigitalPage: React.FC = () => {
               {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Home",
+                "name": "Início",
                 "item": "https://nobrelobo.com"
               },
               {
@@ -1011,7 +1011,7 @@ const MarketingDigitalPage: React.FC = () => {
                 {
                   "@type": "ListItem",
                   "position": 1,
-                  "name": "Home",
+                  "name": "Início",
                   "item": "https://nobrelobo.com"
                 },
                 {
@@ -1050,7 +1050,7 @@ const MarketingDigitalPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
-              <a href="/" className="text-white/70 hover:text-primary transition-colors">Home</a>
+              <a href="/" className="text-white/70 hover:text-primary transition-colors">Início</a>
             </li>
             <li className="text-white/40">/</li>
             <li>

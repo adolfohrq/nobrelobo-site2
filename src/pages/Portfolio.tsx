@@ -125,13 +125,13 @@ const PortfolioPage: React.FC = () => {
         subtitle="Conheça alguns dos projetos que desenvolvemos e os resultados que alcançamos para nossos clientes."
         badge="Casos de Sucesso"
         backgroundImage="/lobo-hero-portfolio.jpg"
-        height="h-[50vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "cover",
           objectPosition: "center",
-          brightness: "100",
+          brightness: "75",
           contrast: "110",
-          scale: 1
+          scale: 1.05
         }}
       />
       

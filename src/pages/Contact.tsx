@@ -13,11 +13,11 @@ const ContactPage: React.FC = () => {
         subtitle="Entre em contato com a nossa equipe e vamos transformar suas ideias em soluções digitais impactantes."
         badge="Contato"
         backgroundImage="/lobo-hero-contato.jpg"
-        height="h-[50vh]"
+        height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
         imageStyle={{
           objectFit: "contain",
           objectPosition: "center",
-          brightness: "100",
+          brightness: "75",
           contrast: "110",
           scale: 1.1
         }}    />
