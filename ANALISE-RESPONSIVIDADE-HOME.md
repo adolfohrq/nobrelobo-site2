@@ -11,7 +11,7 @@
 8. [ContactSection](#7-contactsection)
 9. [Footer](#8-footer)
 10. [SectionDivider](#9-sectiondivider)
-11. [Resumo de Prioridades](#resumo-de-prioridades)
+11. [Resumo de Prioridades](#resumo-de-prioridades)ss
 
 ---
 
