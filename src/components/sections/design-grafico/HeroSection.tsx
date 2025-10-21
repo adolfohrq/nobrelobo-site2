@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => {
       transition: {
         duration: 3 + (i % 4),
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         delay: i * 0.2
       }
     })

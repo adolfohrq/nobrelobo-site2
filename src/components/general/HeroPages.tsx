@@ -65,7 +65,6 @@ const HeroPages: React.FC<HeroPagesProps> = ({
       clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
       transition: {
         duration: 1.3,
-        ease: [0.6, 0.01, 0.05, 0.95],
         delay: 0.3,
       }
     }
