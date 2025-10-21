@@ -6,6 +6,7 @@ import ContactSection from '../components/sections/ContactSection';
 import OurProcessSection from '../components/sections/OurProcessSection';
 import HeroPages from '../components/general/HeroPages';    
 import MissionSection from '../components/sections/MissionSection';
+import LeaderSection from '../components/sections/LeaderSection';
 
 
 const About: React.FC = () => {
@@ -89,6 +90,9 @@ const About: React.FC = () => {
             { number: '200+', label: 'Projetos Entregues' }
           ]}
         />
+
+      {/* Seção do Líder */}
+      <LeaderSection />
 
       <OurProcessSection />
       

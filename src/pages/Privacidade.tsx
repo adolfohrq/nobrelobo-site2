@@ -351,10 +351,10 @@ const Privacidade: React.FC = () => {
                 Para exercer qualquer um dos seus direitos, entre em contato conosco através do e-mail:
               </p>
               <a 
-                href="mailto:privacidade@nobrelobo.com"
+                href="mailto:contato@nobrelobo.com.br"
                 className="text-primary font-bold text-lg hover:text-primary/80 transition-colors"
               >
-                privacidade@nobrelobo.com
+                contato@nobrelobo.com.br
               </a>
             </div>
           </motion.div>
@@ -540,19 +540,19 @@ const Privacidade: React.FC = () => {
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
                 <h3 className="text-xl font-gilroy font-bold text-white mb-4">E-mail</h3>
                 <a 
-                  href="mailto:privacidade@nobrelobo.com"
+                  href="mailto:contato@nobrelobo.com.br"
                   className="text-primary font-medium hover:text-primary/80 transition-colors"
                 >
-                  privacidade@nobrelobo.com
+                  contato@nobrelobo.com.br
                 </a>
               </div>
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
                 <h3 className="text-xl font-gilroy font-bold text-white mb-4">Telefone</h3>
                 <a 
-                  href="tel:+5511999999999"
+                  href="tel:+5548996084931"
                   className="text-primary font-medium hover:text-primary/80 transition-colors"
                 >
-                  +55 (11) 99999-9999
+                  +55 (48) 9.9608-4931
                 </a>
               </div>
             </div>

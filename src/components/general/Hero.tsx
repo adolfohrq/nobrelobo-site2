@@ -1,17 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const imageAnimControls = useAnimation();
   
   // Detectar dispositivos móveis
   useEffect(() => {
     const checkMobile = () => {
-      // Desativar paralaxe apenas em dispositivos touch pequenos
       const isTouchDevice = 'ontouchstart' in window;
       const isSmallScreen = window.innerWidth < 640;
       setIsMobile(isTouchDevice && isSmallScreen);
@@ -22,41 +18,6 @@ const Hero = () => {
     
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-  
-  // Efeito de paralaxe do mouse
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (isMobile) return;
-      
-      const { clientX, clientY } = e;
-      const middleX = window.innerWidth / 2;
-      const middleY = window.innerHeight / 2;
-      
-      const offsetX = ((clientX - middleX) / middleX) * 15;
-      const offsetY = ((clientY - middleY) / middleY) * 15;
-      
-      setMousePosition({ x: offsetX, y: offsetY });
-      
-      // Aplicar o movimento do mouse diretamente
-      imageAnimControls.start({
-        x: offsetX * -0.5,
-        y: offsetY * -0.5,
-        transition: { duration: 0.3 }
-      });
-    };
-    
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isMobile, imageAnimControls]);
   
   const clipPath = {
     initial: { clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)' },
@@ -69,25 +30,13 @@ const Hero = () => {
     }
   };
   
-  // Valores para efeitos de máscara e sombra de texto
-  const maskX = isMobile ? 0 : mousePosition.x * 0.8;
-  const maskY = isMobile ? 0 : mousePosition.y * 0.8;
-  const textShadowX = isMobile ? 0 : mousePosition.x * 0.1;
-  const textShadowY = isMobile ? 0 : mousePosition.y * 0.1;
-  
-  // Calcular escala com base no scroll para evitar espaços vazios
-  // Em mobile, usamos escala menor para melhor performance
-  const imageScale = isMobile ? 1.1 : 1.2 - (scrollY * 0.0001);
-  
   return (
     <section ref={heroRef} className="relative min-h-[300px] sm:min-h-[700px] md:min-h-[100svh] overflow-hidden bg-background">
-      {/* Máscara e gradiente com efeito de paralaxe */}
-      <motion.div 
+      {/* Máscara e gradiente */}
+      <div 
         className="absolute inset-0 z-10 pointer-events-none"
         style={{ 
-          background: isMobile 
-            ? 'radial-gradient(circle at 50% 40%, transparent 5%, rgba(14,14,14,0.6) 80%, rgba(14,14,14,0.95) 100%)'
-            : `radial-gradient(circle at calc(50% + ${maskX}px) calc(50% + ${maskY}px), transparent 1%, rgba(14,14,14,0.7) 90%, rgba(14,14,14,0.95) 100%)`,
+          background: 'radial-gradient(circle at 50% 40%, transparent 5%, rgba(14,14,14,0.6) 80%, rgba(14,14,14,0.95) 100%)'
         }}
       />
       
@@ -98,32 +47,24 @@ const Hero = () => {
         animate="animate"
         variants={clipPath}
       >
-        <motion.div
-          className="absolute inset-0 z-0"
-          style={{ 
-            scale: imageScale, // Usamos a nova variável de escala
-          }}
-          animate={imageAnimControls}
-          initial={{ x: 0, y: 0 }}
-        >
-          {/* Imagem do lobo - Ajustamos para inset-0 e aumentamos a escala */}
+        <div className="absolute inset-0 z-0">
+          {/* Imagem do lobo */}
           <div className="absolute inset-0 overflow-hidden">
             <img 
-              src="/lobo-home2.jpg" 
+              src="/a2.jpg" 
               alt="Lobo Branco - Nobre Lobo Agência Digital" 
               loading="eager"
               decoding="async"
               className="absolute w-full h-full object-cover object-center md:object-center filter brightness-75 contrast-110"
               style={{ 
-                transform: `scale(1)`,
+                transform: `scale(${isMobile ? 1.1 : 1.2})`,
                 transformOrigin: 'center',
-                willChange: isMobile ? 'auto' : 'transform',
                 objectPosition: isMobile ? 'center 40%' : 'center'
               }}
             />
             
             {/* Camadas de sobreposição para escurecer a imagem */}
-            <div className="absolute inset-0 bg-background opacity-10 sm:opacity-20"></div>
+            <div className="absolute inset-0 bg-background opacity-0 sm:opacity-0"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent sm:from-black/60 sm:via-black/30"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/25 sm:from-black/50"></div>
             <div className="absolute inset-0 bg-primary/3 sm:bg-primary/10 mix-blend-overlay"></div>
@@ -137,7 +78,7 @@ const Hero = () => {
               }}
             ></div>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
       
       {/* Conteúdo */}
@@ -170,7 +111,7 @@ const Hero = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               style={{ 
-                textShadow: !isMobile ? `${textShadowX * 2}px ${textShadowY * 2}px 8px rgba(0,0,0,0.2)` : '0 4px 16px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,1), 0 1px 3px rgba(0,0,0,1)',
+                textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,1), 0 1px 3px rgba(0,0,0,1)'
               }}
             >
               <span className="block mb-0 sm:mb-0">ESTRATÉGIA,</span>

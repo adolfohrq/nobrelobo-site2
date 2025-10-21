@@ -1,5 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import SectionHeader from '../general/SectionHeader'
+import { TrendingUp } from 'lucide-react'
 
 interface JourneyStep {
   number: string
@@ -31,7 +33,23 @@ const JourneySplitScreen: React.FC<JourneySplitScreenProps> = ({
   return (
     <section className="relative flex items-center py-16 md:py-20 lg:min-h-screen">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+        {/* Header da seção usando SectionHeader */}
+        <SectionHeader
+          title={
+            <>
+              {title}
+              <span className="text-primary block">{titleHighlight}</span>
+            </>
+          }
+          subtitle={description}
+          badge={badge}
+          floatingTitleText="JORNADA"
+          iconComponent={
+            <TrendingUp className="w-8 h-8 text-primary" />
+          }
+        />
+        
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mt-20">
           {/* Left - Image */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -71,21 +89,6 @@ const JourneySplitScreen: React.FC<JourneySplitScreenProps> = ({
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            {badge && (
-              <span className="text-primary text-xs font-semibold uppercase tracking-wider mb-3 block">
-                {badge}
-              </span>
-            )}
-            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-gilroy font-bold mb-4 sm:mb-6 leading-tight">
-              {title}
-              <span className="text-primary block mt-2">{titleHighlight}</span>
-            </h2>
-            
-            <p className="text-base text-white/70 mb-6 leading-relaxed">
-              {description}
-            </p>
-
             <div className="space-y-4">
               {steps.map((item, index) => (
                 <motion.div

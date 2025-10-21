@@ -809,7 +809,7 @@ const MarketingDigitalPage: React.FC = () => {
         <meta property="linkedin:owner" content="nobrelobo" />
         
         {/* Meta Tags para WhatsApp */}
-        <meta property="whatsapp:phone" content="+5511999999999" />
+        <meta property="whatsapp:phone" content="+5548996084931" />
         
         {/* Preconnect para Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -831,18 +831,18 @@ const MarketingDigitalPage: React.FC = () => {
               "logo": "https://nobrelobo.com/logo.png",
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+55-11-99999-9999",
+                "telephone": "+55-48-99608-4931",
                 "contactType": "customer service",
                 "availableLanguage": "Portuguese"
               },
               "address": {
                 "@type": "PostalAddress",
-                "addressCountry": "BR"
+                "addressCountry": "BR",
+                "addressRegion": "SC"
               },
               "sameAs": [
-                "https://www.instagram.com/nobrelobo",
-                "https://www.linkedin.com/company/nobrelobo",
-                "https://www.facebook.com/nobrelobo"
+                "https://www.instagram.com/nobreloboagencia/",
+                "https://www.facebook.com/nobreloboagencia/"
               ]
             },
             "offers": {
@@ -955,26 +955,20 @@ const MarketingDigitalPage: React.FC = () => {
             "url": "https://nobrelobo.com",
             "logo": "https://nobrelobo.com/logo.png",
             "image": "https://nobrelobo.com/lobo-hero-services.jpg",
-            "telephone": "+55-11-99999-9999",
-            "email": "contato@nobrelobo.com",
+            "telephone": "+55-48-99608-4931",
+            "email": "contato@nobrelobo.com.br",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "BR",
-              "addressRegion": "São Paulo"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "-23.5505",
-              "longitude": "-46.6333"
+              "addressRegion": "Santa Catarina"
             },
             "openingHours": "Mo-Fr 09:00-18:00",
             "priceRange": "$$",
             "paymentAccepted": "Cash, Credit Card",
             "currenciesAccepted": "BRL",
             "sameAs": [
-              "https://www.instagram.com/nobrelobo",
-              "https://www.linkedin.com/company/nobrelobo",
-              "https://www.facebook.com/nobrelobo"
+              "https://www.instagram.com/nobreloboagencia/",
+              "https://www.facebook.com/nobreloboagencia/"
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",

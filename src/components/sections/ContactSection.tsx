@@ -94,7 +94,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         </svg>
       ),
       title: 'Endereço',
-      details: ['Tijucas/SC'],
+      details: ['Santa Catarina'],
       delay: 0.3,
     },
   ];
@@ -103,24 +103,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     {
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M6 9H2V21H6V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      url: 'https://linkedin.com/company/nobrelobo',
-      delay: 0.5,
-    },
-    {
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M17.5 6.5H17.51" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M17 3H7C4.79086 3 3 4.79086 3 7V17C3 19.2091 4.79086 21 7 21H17C19.2091 21 21 19.2091 21 17V7C21 4.79086 19.2091 3 17 3Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
-      url: 'https://instagram.com/nobrelobo',
-      delay: 0.6,
+      url: 'https://www.instagram.com/nobreloboagencia/',
+      delay: 0.5,
     },
     {
       icon: (
@@ -128,10 +117,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      url: 'https://facebook.com/nobrelobo',
-      delay: 0.7,
+      url: 'https://www.facebook.com/nobreloboagencia/',
+      delay: 0.6,
     },
-
   ];
   
   return (
@@ -163,10 +151,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             transition={{ duration: 0.7, delay: 0.2 }}
             className="bg-accent/20 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 lg:p-10 shadow-xl relative overflow-hidden"
           >
-            {/* Elementos decorativos de fundo */}
-            <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
-            
             <h3 className="text-3xl font-gilroy font-bold text-white mb-6 relative">
               Envie sua mensagem
               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-primary rounded-full"></span>
@@ -386,10 +370,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             transition={{ duration: 0.7, delay: 0.4 }}
             className="rounded-2xl border border-white/10 p-5 sm:p-6 md:p-8 lg:p-10 h-full flex flex-col justify-between bg-accent/10 backdrop-blur-sm shadow-xl relative overflow-hidden"
           >
-            {/* Elementos decorativos de fundo */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-            
             <div className="flex flex-col h-full justify-between">
               <div>
                 <h3 className="text-3xl font-gilroy font-bold text-white mb-6 relative">
@@ -438,20 +418,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 
                 <div className="flex items-center gap-2">
                   <a 
-                    href="https://linkedin.com/company/nobreloboagencia" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center text-white bg-accent hover:bg-accent/80 rounded-md transition-colors"
-                  >
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" />
-                      <path d="M6 9H2V21H6V9Z" />
-                      <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" />
-                    </svg>
-                  </a>
-                  
-                  <a 
-                    href="https://instagram.com/nobrelobo" 
+                    href="https://www.instagram.com/nobreloboagencia/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-12 h-12 flex items-center justify-center text-white bg-accent hover:bg-accent/80 rounded-md transition-colors"
@@ -464,7 +431,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   </a>
                   
                   <a 
-                    href="https://facebook.com/nobrelobo" 
+                    href="https://www.facebook.com/nobreloboagencia/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-12 h-12 flex items-center justify-center text-white bg-accent hover:bg-accent/80 rounded-md transition-colors"
@@ -473,8 +440,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                     </svg>
                   </a>
-                  
-
                 </div>
               </div>
             </div>

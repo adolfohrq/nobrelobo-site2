@@ -203,11 +203,11 @@ const Header: React.FC = () => {
             <div className="flex items-center space-x-3">
               {/* Telefone - Desktop */}
               <a 
-                href="tel:+5511999999999" 
+                href="tel:+5548996084931" 
                 className="hidden lg:flex items-center space-x-2 px-4 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-300 group"
               >
                 <Phone size={14} className="text-primary group-hover:scale-110 transition-transform" />
-                <span className="text-xs font-medium text-white/80 group-hover:text-white">(11) 99999-9999</span>
+                <span className="text-xs font-medium text-white/80 group-hover:text-white">+55 (48) 9.9608-4931</span>
               </a>
 
               {/* Botão CTA Premium */}
@@ -362,11 +362,11 @@ const Header: React.FC = () => {
               <div className="p-6 space-y-3 border-t border-white/5 bg-gradient-to-t from-primary/5 to-transparent">
                 {/* Telefone */}
                 <a 
-                  href="tel:+5511999999999"
+                  href="tel:+5548996084931"
                   className="flex items-center justify-center space-x-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
                 >
                   <Phone size={16} className="text-primary" />
-                  <span className="text-sm text-white/80">(11) 99999-9999</span>
+                  <span className="text-sm text-white/80">+55 (48) 9.9608-4931</span>
                 </a>
 
                 {/* CTA Principal */}

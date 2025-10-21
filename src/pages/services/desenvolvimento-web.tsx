@@ -476,12 +476,12 @@ const CustomCTASection: React.FC = () => {
                       <ArrowRight size={18} className="ml-2" />
                     </motion.a>
                     <motion.a
-                      href="tel:+5511999999999"
+                      href="tel:+5548996084931"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-xl hover:bg-white/10 transition-colors border border-white/10"
                     >
-                      (11) 99999-9999
+                      +55 (48) 9.9608-4931
                     </motion.a>
                   </div>
                 </div>
@@ -692,7 +692,7 @@ const DesenvolvimentoWebPage: React.FC = () => {
               "@type": "Organization",
               "name": "Universidade de Tecnologia"
             },
-            "award": "Melhor Agência Digital de Tijucas, SC 2024"
+            "award": "Melhor Agência Digital de Santa Catarina 2024"
           })}
         </script>
         
@@ -710,12 +710,11 @@ const DesenvolvimentoWebPage: React.FC = () => {
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "BR",
-                "addressRegion": "SC",
-                "addressLocality": "Tijucas"
+                "addressRegion": "Santa Catarina"
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+55-48-99999-9999",
+                "telephone": "+55-48-99608-4931",
                 "contactType": "customer service",
                 "availableLanguage": "Portuguese"
               }

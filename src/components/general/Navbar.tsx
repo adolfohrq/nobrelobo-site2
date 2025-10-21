@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Button } from '../ui/button'
-import { Menu, X, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
+import { Menu, X, Instagram, Facebook } from 'lucide-react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 
 const Navbar: React.FC = () => {
@@ -67,20 +67,14 @@ const Navbar: React.FC = () => {
     { name: 'Contato', path: '/contact' },
   ];
 
-  // Variantes para animações
-  const navVariants = {
-    visible: { y: 0, opacity: 1 },
-    hidden: { y: -100, opacity: 0 }
-  };
-
   return (
     <>
-      <motion.nav 
+      <nav 
         ref={navRef}
-        variants={navVariants}
-        initial="visible"
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.4 }}
+        style={{
+          transform: hidden ? 'translateY(-100%)' : 'translateY(0)',
+          opacity: hidden ? 0 : 1,
+        }}
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
           isScrolled 
             ? 'py-3' 
@@ -106,7 +100,7 @@ const Navbar: React.FC = () => {
                 <div className="hidden md:block h-8 w-px bg-border/20"></div>
                 <div className="hidden md:flex space-x-3">
                   <motion.div
-                    onClick={() => window.open('#', '_blank')}
+                    onClick={() => window.open('https://www.instagram.com/nobreloboagencia/', '_blank')}
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     className="text-white/60 hover:text-primary transition-colors duration-300 cursor-pointer"
@@ -114,28 +108,12 @@ const Navbar: React.FC = () => {
                     <Instagram size={16} />
                   </motion.div>
                   <motion.div
-                    onClick={() => window.open('#', '_blank')}
+                    onClick={() => window.open('https://www.facebook.com/nobreloboagencia/', '_blank')}
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     className="text-white/60 hover:text-primary transition-colors duration-300 cursor-pointer"
                   >
                     <Facebook size={16} />
-                  </motion.div>
-                  <motion.div
-                    onClick={() => window.open('#', '_blank')}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="text-white/60 hover:text-primary transition-colors duration-300 cursor-pointer"
-                  >
-                    <Twitter size={16} />
-                  </motion.div>
-                  <motion.div
-                    onClick={() => window.open('#', '_blank')}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="text-white/60 hover:text-primary transition-colors duration-300 cursor-pointer"
-                  >
-                    <Linkedin size={16} />
                   </motion.div>
                 </div>
               </div>
@@ -207,7 +185,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
-      </motion.nav>
+      </nav>
       
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -288,7 +266,7 @@ const Navbar: React.FC = () => {
                 {/* Redes sociais mobile */}
                 <div className="flex items-center space-x-6 mt-8 justify-center">
                   <motion.div
-                    onClick={() => window.open('#', '_blank')}
+                    onClick={() => window.open('https://www.instagram.com/nobreloboagencia/', '_blank')}
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     className="text-white/60 hover:text-primary transition-colors duration-300 cursor-pointer"
@@ -296,28 +274,12 @@ const Navbar: React.FC = () => {
                     <Instagram size={18} />
                   </motion.div>
                   <motion.div
-                    onClick={() => window.open('#', '_blank')}
+                    onClick={() => window.open('https://www.facebook.com/nobreloboagencia/', '_blank')}
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     className="text-white/60 hover:text-primary transition-colors duration-300 cursor-pointer"
                   >
                     <Facebook size={18} />
-                  </motion.div>
-                  <motion.div
-                    onClick={() => window.open('#', '_blank')}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="text-white/60 hover:text-primary transition-colors duration-300 cursor-pointer"
-                  >
-                    <Twitter size={18} />
-                  </motion.div>
-                  <motion.div
-                    onClick={() => window.open('#', '_blank')}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="text-white/60 hover:text-primary transition-colors duration-300 cursor-pointer"
-                  >
-                    <Linkedin size={18} />
                   </motion.div>
                 </div>
               </div>

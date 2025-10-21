@@ -21,15 +21,18 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       {/* Texto flutuante de fundo */}
       {floatingTitleText && (
         <motion.div 
-          className="absolute -top-20 left-0 right-0 text-center pointer-events-none select-none z-0"
+          className="absolute -top-20 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0"
+          style={{ width: '100vw', marginLeft: '-50vw' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 0.03, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-[120px] md:text-[180px] lg:text-[220px] font-bold font-gilroy text-white uppercase tracking-tighter">
-            {floatingTitleText}
-          </span>
+          <div className="text-center w-full">
+            <span className="text-[80px] md:text-[120px] lg:text-[160px] font-bold font-gilroy text-white uppercase tracking-tighter leading-none inline-block">
+              {floatingTitleText}
+            </span>
+          </div>
         </motion.div>
       )}
       
