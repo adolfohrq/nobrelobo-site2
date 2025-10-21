@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Fundo circular -->
+  <circle cx="100" cy="100" r="90" fill="#F9AB00" />
+  
+  <!-- Forma de ampulheta (símbolo do Google Analytics) -->
+  <path d="M100 50 L150 150 L50 150 Z" fill="#E37400" />
+  <path d="M100 50 L50 150 L100 150 Z" fill="#FFFFFF" />
+  
+  <!-- Círculo central -->
+  <circle cx="100" cy="100" r="15" fill="#FFFFFF" />
+</svg> 
