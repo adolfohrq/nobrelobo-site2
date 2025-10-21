@@ -8,7 +8,7 @@ const ServicesHero = () => {
       subtitle="Soluções estratégicas e inovadoras para impulsionar sua presença digital e transformar resultados."
       badge="Soluções Personalizadas"
       backgroundImage="/lobo-hero-services.jpg"
-      height="h-[50vh]"
+      height="h-[50vh] sm:h-[55vh] md:h-[60vh]"
       imageStyle={{
         objectFit: "cover",
         objectPosition: "center",

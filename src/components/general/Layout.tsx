@@ -29,9 +29,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </div>
       
       {/* Elementos de gradiente fixos */}
-      <div className="fixed w-1/3 h-1/3 top-0 right-0 bg-primary/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
-      <div className="fixed w-1/4 h-1/4 bottom-0 left-1/4 bg-primary/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
-      <div className="fixed w-1/3 h-1/3 top-1/2 left-0 bg-primary/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+      <div className="fixed w-48 h-48 md:w-1/3 md:h-1/3 top-0 right-0 bg-primary/5 blur-[100px] md:blur-[150px] rounded-full pointer-events-none z-0"></div>
+      <div className="fixed w-32 h-32 md:w-1/4 md:h-1/4 bottom-0 left-1/4 bg-primary/5 blur-[100px] md:blur-[150px] rounded-full pointer-events-none z-0"></div>
+      <div className="fixed w-40 h-40 md:w-1/3 md:h-1/3 top-1/2 left-0 bg-primary/5 blur-[100px] md:blur-[150px] rounded-full pointer-events-none z-0"></div>
       
       <Header />
       <main className="flex-1 relative z-10 pt-0">

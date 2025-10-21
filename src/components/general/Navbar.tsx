@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
 
   // Links de navegação
   const navItems: Array<{ name: string; path: string; submenu?: Array<{ name: string; path: string }> }> = [
-    { name: 'Home', path: '/' },
+    { name: 'Início', path: '/' },
     { name: 'Sobre', path: '/about' },
     { 
       name: 'Serviços', 
