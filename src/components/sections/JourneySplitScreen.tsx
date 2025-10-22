@@ -31,7 +31,7 @@ const JourneySplitScreen: React.FC<JourneySplitScreenProps> = ({
   steps
 }) => {
   return (
-    <section className="relative flex items-center py-16 md:py-20 lg:min-h-screen">
+    <section className="relative flex items-center py-24 md:py-40 lg:min-h-screen">
       <div className="container mx-auto px-4">
         {/* Header da seção usando SectionHeader */}
         <SectionHeader

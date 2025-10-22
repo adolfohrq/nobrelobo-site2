@@ -111,7 +111,7 @@ const Hero = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               style={{ 
-                textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,1), 0 1px 3px rgba(0,0,0,1)'
+                textShadow: 'rgba(0, 0, 0, 0.1) 0px 1px 1px, rgb(0, 0, 0) 0px 1px 1px, rgb(0, 0, 0) 0px 1px 1px'
               }}
             >
               <span className="block mb-0 sm:mb-0">ESTRATÉGIA,</span>
